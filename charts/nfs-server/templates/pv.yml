@@ -6,3 +6,4 @@ spec:
   accessModes: {{ .Values.pv.accessModes | toYaml | nindent 4 }}
   capacity: {{ .Values.pv.capacity | toYaml | nindent 4 }}
   nfs: {{ .Values.pv.nfs | toYaml | nindent 4 }}
+  storageClassName: {{ .Values.pv.storageClassName }}

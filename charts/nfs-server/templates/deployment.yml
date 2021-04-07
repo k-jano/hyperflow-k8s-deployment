@@ -34,7 +34,7 @@ spec:
               name: rpcbind
           securityContext:
             privileged: true
-          volumeMounts: {{ .Values.volumeMounts | toYaml | nindent 8 }}
+          volumeMounts: {{ .Values.volumeMounts | toYaml | nindent 12 }}
         - name: workflow-data
           image: {{ .Values.workflow.image }}
           imagePullPolicy: {{ .Values.workflow.imagePullPolicy}}
@@ -57,7 +57,7 @@ spec:
                   - "-c"
                   - >
                     umount -fl /workflow-data;
-          volumeMounts: {{- .Values.volumeMounts | toYaml | nindent 8 }}
+          volumeMounts: {{- .Values.volumeMounts | toYaml | nindent 12 }}
       {{- with .Values.nodeSelector }}
       nodeSelector: {{ . | toYaml | nindent 8}}
       {{- end }}

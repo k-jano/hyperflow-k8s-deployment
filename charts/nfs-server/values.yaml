@@ -6,7 +6,7 @@ server:
   imagePullPolicy: IfNotPresent
 
 workflow:
-  image: matplinta/montage-workflow-data:montage0.25-v2
+  image: matplinta/montage-workflow-data:degree0.25
   imagePullPolicy: Always
 
 ports:
@@ -22,7 +22,7 @@ pv:
   nfs:
     path: /
     server: nfs-server.default.svc.cluster.local
-  storageClassName: ''
+  storageClassName: standard
 
 volumeMounts:
   - mountPath: /workflow-data:shared
